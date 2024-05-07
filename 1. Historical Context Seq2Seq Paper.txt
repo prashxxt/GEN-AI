@@ -1,0 +1,33 @@
+1. Historical Context: Seq2Seq Paper and NMT by Joint Learning to Align & Translate Paper
+
+Seq2Seq (Sequence to Sequence) models, introduced by Sutskever et al. in 2014, revolutionized tasks like machine translation. These models, built on Recurrent Neural Networks (RNNs), consist of two main components: an encoder that processes the input sequence into a fixed-size context vector, and a decoder that generates the output sequence based on this context vector.
+
+"NMT by Joint Learning to Align & Translate," proposed by Bahdanau et al. in 2014, improved upon Seq2Seq by introducing attention mechanisms. This allowed the model to focus on different parts of the input sequence as it generated the output, mitigating the information loss problem faced by traditional Seq2Seq models.
+
+2. Introduction to Transformers (Paper: Attention is all you need)
+
+The "Attention is All You Need" paper by Vaswani et al. in 2017 introduced the Transformer architecture, which further advanced sequence modeling. Unlike RNN-based models, Transformers rely entirely on self-attention mechanisms, enabling parallelization and capturing long-range dependencies more effectively.
+
+3. Why Transformers?
+
+Transformers have several advantages over RNN-based models:
+
+They can capture long-range dependencies more efficiently.
+They allow for parallelization, making training faster.
+Transformers are more amenable to scaling to larger datasets and models.
+They mitigate the vanishing gradient problem inherent in RNNs, leading to more stable training.
+4. Explain the working of each transformer component.
+
+a. Self-Attention Mechanism: Computes attention scores between all pairs of positions in an input sequence, allowing each position to attend to others with varying weights. This captures dependencies between different parts of the sequence.
+
+b. Positional Encoding: Injects information about the position of tokens into the input embeddings, enabling the model to understand the order of tokens in the sequence.
+
+c. Encoder and Decoder Stacks: Multiple layers of encoder and decoder blocks process the input and output sequences, respectively. Each block contains sub-layers, such as multi-head self-attention and position-wise feed-forward networks, followed by layer normalization.
+
+d. Feed-Forward Networks: These are fully connected layers applied independently to each position in the sequence, providing additional flexibility for capturing complex patterns.
+
+5. How is GPT-1 trained from Scratch? (Take Reference from BERT and GPT-1 Paper)
+
+GPT-1 (Generative Pre-trained Transformer 1) is trained using a variant of unsupervised learning called self-supervised learning. Like BERT, it utilizes a large corpus of text data to pre-train the model. The pre-training objective involves predicting the next token in a sequence given all preceding tokens. This forces the model to learn contextual representations of words.
+
+During pre-training, GPT-1 is trained to minimize the negative log-likelihood of predicting the next token in a sequence across multiple training iterations. After pre-training, the model can be fine-tuned on downstream tasks with task-specific supervised learning objectives
